@@ -35,11 +35,18 @@ function App() {
     }
   }
 
+  function restart() {
+    setStep(0)
+    setCorrectAnswer(0)
+    startTime.current = Date.now()
+  }
+
   if (step == questions.length) {
       return (
         <>
         <h1>Результат: {correctAnswers} из {questions.length}</h1>
         <h1>Затраченное время: {timeSpend} сек.</h1>
+        <button onClick={restart}>НАЧАТЬ ЗАНОВО</button>
         </>
       )
     }
